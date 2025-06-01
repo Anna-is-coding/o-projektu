@@ -1,14 +1,135 @@
-/* Používáme intuitivní výpočet rozměrů prvků. */
-*, *:before, *:after {
+/* 1) Reset/normalize základních hodnot */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-family: sans-serif;
+/* 2) Všeobecné nastavení těla stránky */
+body {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #2a5934;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.container {
-  max-width: 20rem;
-  margin-right: auto;
-  margin-left: auto;
+/* 3) Hlavička */
+
+/* 3) Hlavička – nižší lišta */
+header {
+  background-color: #cbddd1;
+  color: #2a5934;
+  padding: 0.5rem 1rem;
+  /* méně svislého odsazení */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 700;
+  color: #2a5934;
+  font-size: 1.5rem;
+  /* menší velikost nadpisu */
+}
+
+header h1 a {
+  color: inherit;
+  /* zdědí barvu z <h1> */
+  text-decoration: none;
+  /* odstraní podtržení */
+}
+
+header h1 a:hover {
+  color: #1f3d27;
+  /* nebo jiná tmavší barva při hoveru */
+}
+
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0;
+  font-size: 1.2rem;
+  /* menší velikost navigačních odkazů */
+}
+
+header nav a {
+  color: #2a5934;
+  text-decoration: none;
+}
+
+
+header nav a:hover {
+  color: #1f3d27;
+}
+
+
+
+/* 4) Hlavní obsah */
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #2a5934;
+  color: #f4f4f4;
+}
+
+/* Obrázek v hlavním obsahu */
+main img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Textový blok projektu */
+.project-text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.project-text strong {
+  color: #ffd27f;
+  /* světlejší oranžová akcent pro tučný text */
+}
+
+/* 5) Patička */
+footer {
+  background-color: #cbddd1;
+  color: #2a5934;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 0.3rem;
+}
+
+/* 6) Responzivita pro mobilní zařízení */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
 }
